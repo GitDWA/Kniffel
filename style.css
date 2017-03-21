@@ -115,8 +115,7 @@ input[type=button].finished{
 background-color:rgb(0, 70, 75);;
 }
 /* wuerfel */
-input[type=button].wuerfel {
-margin: 1%;
+input[type=button].wuerfel{
 font-size: 0px;
 /*min-width: 50px;
 min-height: 50px;*/
@@ -156,6 +155,7 @@ input[type=button].wuerfelAusgewaehlt{
   border: 3px double grey;
 }
 .menu{
+  margin: 1%;
   font-size: 14px;
   background-color: white;
   padding: 6px;
