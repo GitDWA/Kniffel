@@ -125,27 +125,27 @@ border-radius: 10px;
 
 }
 input[type=button][value="1"].wuerfel{
-  background-image:  url('wuerfel_1.png');
+  background-image:  url('img/wuerfel_1.png');
   background-size: cover;
 }
 input[type=button][value="2"].wuerfel{
-  background-image:  url('wuerfel_2.png');
+  background-image:  url('img/wuerfel_2.png');
   background-size: cover;
 }
 input[type=button][value="3"].wuerfel{
-  background-image:  url('wuerfel_3.png');
+  background-image:  url('img/wuerfel_3.png');
   background-size: cover;
 }
 input[type=button][value="4"].wuerfel{
-  background-image:  url('wuerfel_4.png');
+  background-image:  url('img/wuerfel_4.png');
   background-size: cover;
 }
 input[type=button][value="5"].wuerfel{
-  background-image:  url('wuerfel_5.png');
+  background-image:  url('img/wuerfel_5.png');
   background-size: cover;
 }
 input[type=button][value="6"].wuerfel{
-  background-image:  url('wuerfel_6.png');
+  background-image:  url('img/wuerfel_6.png');
   background-size: cover;
 }
 input[type=button].wuerfelAusgewaehlt{
