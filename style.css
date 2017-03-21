@@ -1,0 +1,197 @@
+body {
+  background-color: rgb(0,20,50);
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  margin: 0px;
+}
+h1{
+  color: white;
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  background-color: #008B8B;
+  color: white;
+}
+th.active{
+  background-color:rgb(0,200,200);
+}
+td, th {
+  border: 1px solid #ddd;
+  padding:5px;
+  height:50px;
+  width: 10%;
+  transition: width 3s;
+}
+td {
+  text-align: right;
+  white-space: nowrap;
+}
+tr:nth-child(even){
+  background-color: rgba(200,200,255,0.6);
+}
+tr:nth-child(odd){
+  background-color: rgba(200,200,255,0.4);
+}
+input, button{
+  border:none;
+  background:rgba(255,255,255,0.3);
+  text-align:center;
+  width: 15%;
+  /*height: 100%;*/
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 5px;
+
+}
+input:disabled, button:disabled{
+  background:rgba(255,255,255,0);
+  color:black;
+
+}
+
+.headCol {
+  position: absolute;
+  width:10%;
+  left:0;
+  top:auto;
+  margin-top: -1px;
+  text-align:left;
+  overflow:hidden;
+}
+td.headCol{
+  background-color: rgba(200,200,255,0.5);
+  font-size:30px;
+}
+
+.streichen{
+  color:red;
+}
+:disabled.streichen{
+  color:red;
+}
+.rowResult{
+  background-color: rgba(100,100,255,0.2);
+}
+.fuehrend{
+  background-color: rgba(100,255,100,0.5);
+}
+.active{
+  width:100%;
+  transition: width 2s;
+}
+.hidden{
+  display:none;
+}
+.notLogged{
+  /*background-color: rgba(255, 204, 102,0.5);*/
+}
+.rowResult input:disabled{
+  font-weight:bold;
+}
+/*tab*/
+input[type=button].tab{
+height: 45px;
+width:auto;
+background-color: #006666;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+border-bottom: none;
+padding: 6px;
+font-size: 14px;
+font-weight: bold;
+}
+/*activ tab*/
+input[type=button].active{
+border:1px solid white;
+background-color: #008B8B;
+border-bottom-color: #008B8B;
+width: 5%;
+}
+/*tab*/
+input[type=button].finished{
+background-color:rgb(0, 70, 75);;
+}
+input[type=button].wuerfel{
+font-size: 0px;
+/*min-width: 50px;
+min-height: 50px;*/
+width: 200px;
+height: 200px;
+background-color: white;
+border-radius: 10px;
+
+}
+input[type=button][value="1"].wuerfel{
+  background-image:  url('wuerfel_1.png');
+  background-size: cover;
+}
+input[type=button][value="2"].wuerfel{
+  background-image:  url('wuerfel_2.png');
+  background-size: cover;
+}
+input[type=button][value="3"].wuerfel{
+  background-image:  url('wuerfel_3.png');
+  background-size: cover;
+}
+input[type=button][value="4"].wuerfel{
+  background-image:  url('wuerfel_4.png');
+  background-size: cover;
+}
+input[type=button][value="5"].wuerfel{
+  background-image:  url('wuerfel_5.png');
+  background-size: cover;
+}
+input[type=button][value="6"].wuerfel{
+  background-image:  url('wuerfel_6.png');
+  background-size: cover;
+}
+input[type=button].wuerfelAusgewaehlt{
+  width: 20px;
+  height: 20px;
+}
+.menu{
+  font-size: 14px;
+  background-color: white;
+  padding: 6px;
+}
+:disabled.menu{
+  background-color: grey;
+}
+#headContainer{
+  width: 50%;
+  display: flex;
+}
+#tabContainer{
+  width: 75%;
+}
+#menuContainer{
+  width:25%;
+  text-align: right;
+}
+#scrollableTable{
+  width: 40%;
+  overflow-x:scroll;
+  margin-left:10%;
+}
+#mainContainer{
+  width:100%;
+  display:flex;
+}
+#wuerfelContainer{
+  padding:1%;
+}
+
+@media (max-width: 600px)
+{
+  #scrollableTable{
+    width: 90%;
+  }
+  #wuerfelContainer{
+    position: absolute;
+    right:-200px;
+  }
+
+}
