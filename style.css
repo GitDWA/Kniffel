@@ -114,14 +114,15 @@ width: 5%;
 input[type=button].finished{
 background-color:rgb(0, 70, 75);;
 }
+/* wuerfel */
 input[type=button].wuerfel{
 font-size: 0px;
 /*min-width: 50px;
 min-height: 50px;*/
-width: 200px;
-height: 200px;
+width: 100px;
+height: 100px;
 background-color: white;
-border-radius: 10px;
+border-radius: 20%;
 
 }
 input[type=button][value="1"].wuerfel{
