@@ -115,7 +115,8 @@ input[type=button].finished{
 background-color:rgb(0, 70, 75);;
 }
 /* wuerfel */
-input[type=button].wuerfel{
+input[type=button].wuerfel {
+margin: 1%;
 font-size: 0px;
 /*min-width: 50px;
 min-height: 50px;*/
