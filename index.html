@@ -4,9 +4,12 @@
   <title>Kniffel</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-  <link rel="stylesheet" href="style.css">
+    
+  <script src="https://togetherjs.com/togetherjs-min.js"></script>
+  
   <script type='text/javascript' src='knockout-3.4.1.js'></script>
   <script type='text/javascript' src='kniffelViewModel.js'></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="headContainer">
@@ -18,6 +21,7 @@
       <input class="tab" type="button" value="neues Spiel" style="width:100px;" data-bind="click:function(){addSpiel(window.confirm('Soll die Spielerliste übernommen werden?'))}" />
     </div>
     <div id="menuContainer">
+      <button id=togetherjs_startButton onclick="TogetherJS(this); return false;">Start TogetherJS</button>
       <!-- ko with: aktivesSpiel() -->
       <input class="menu" type="button" value="undo" style="width:100px;" data-bind="click:undo, enable: lastLogItem" />
       <!-- /ko -->
