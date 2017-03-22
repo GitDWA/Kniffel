@@ -1,9 +1,9 @@
 body {
-  background-color: rgb(0,20,50);
+  background-color: rgb(0,25,45);
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   margin: 0px;
 }
-h1{
+h1 {
   color: white;
   text-align: center;
 }
@@ -14,20 +14,26 @@ table {
 th {
   background-color: #008B8B;
   color: white;
+  transition: background-color 2s;
 }
 th.active{
-  background-color:rgb(0,200,200);
+  background-color: rgb(0,200,200);
+  transition: background-color 2s;
 }
 td, th {
   border: 1px solid #ddd;
   padding:5px;
   height:50px;
   width: 10%;
-  transition: width 3s;
+  transition: width 2s;
 }
 td {
   text-align: right;
   white-space: nowrap;
+}
+td.active, th.active {
+  width:100%;
+  transition: width 2s;
 }
 tr:nth-child(even){
   background-color: rgba(200,200,255,0.6);
@@ -35,21 +41,33 @@ tr:nth-child(even){
 tr:nth-child(odd){
   background-color: rgba(200,200,255,0.4);
 }
-input, button{
+input, button {
   border:none;
   background:rgba(255,255,255,0.3);
   text-align:center;
-  /*width: 15%;
-  height: 100%;*/
   min-width: 40px;
   min-height: 40px;
   border-radius: 5px;
-
 }
+.input_button {
+  width: 16%;
+  /*
+  transition: width 2s;
+  min-width: 0px;
+  width: 0px;
+  */
+}
+/*
+input.active, button.active {
+  min-width: 40px;
+  width: 16%;
+  transition: width 2s;
+}
+*/
 input:disabled, button:disabled{
   background:rgba(255,255,255,0);
   color:black;
-
+  width: 0%;
 }
 
 .headCol {
@@ -68,6 +86,7 @@ td.headCol{
 
 .streichen{
   color:red;
+  font-weight: bold;
 }
 :disabled.streichen{
   color:red;
@@ -77,10 +96,6 @@ td.headCol{
 }
 .fuehrend{
   background-color: rgba(100,255,100,0.5);
-}
-.active{
-  width:100%;
-  transition: width 2s;
 }
 .hidden{
   display:none;
@@ -176,7 +191,8 @@ input[type=button].wuerfelAusgewaehlt{
 #scrollableTable{
   width: 40%;
   overflow-x:scroll;
-  margin-left:10%;
+  margin-left:11%;
+  /*z-index: 1000;*/
 }
 #mainContainer{
   width:100%;
@@ -184,6 +200,7 @@ input[type=button].wuerfelAusgewaehlt{
 }
 #wuerfelContainer{
   padding:1%;
+  /*z-index: 500;*/
 }
 
 @media (max-width: 600px)
@@ -198,6 +215,9 @@ input[type=button].wuerfelAusgewaehlt{
 }
 
 #togetherjs_startButton {
+  width: auto;
+  margin-left: 10%;
+  align-self: right;
   border: 1px solid yellow;
   background: lightblue;
 }
