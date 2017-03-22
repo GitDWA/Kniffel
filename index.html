@@ -4,9 +4,9 @@
   <title>Kniffel</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-    
+
   <script src="https://togetherjs.com/togetherjs-min.js"></script>
-  
+
   <script type='text/javascript' src='knockout-3.4.1.js'></script>
   <script type='text/javascript' src='kniffelViewModel.js'></script>
     <link rel="stylesheet" href="style.css">
@@ -19,9 +19,10 @@
       <input class="tab" type="button" data-bind="value: $index() + 1, click: $parent.changeActiveSpiel($index()), css:{active:isActive, finished:abgeschlossen}" />
       <!-- /ko -->
       <input class="tab" type="button" value="neues Spiel" style="width:100px;" data-bind="click:function(){addSpiel(window.confirm('Soll die Spielerliste übernommen werden?'))}" />
+      <!-- TogetherJS -->
+      <button id=togetherjs_startButton onclick="TogetherJS(this); return false;">Start TogetherJS</button>
     </div>
     <div id="menuContainer">
-      <button id=togetherjs_startButton onclick="TogetherJS(this); return false;">Start TogetherJS</button>
       <!-- ko with: aktivesSpiel() -->
       <input class="menu" type="button" value="undo" style="width:100px;" data-bind="click:undo, enable: lastLogItem" />
       <!-- /ko -->
@@ -34,7 +35,7 @@
         <tr id="rowHead">
           <th class="headCol">  <input class="menu" type="button" value="+Spieler" style="width:100px;" data-bind="click:function(){addSpieler()}, disable:begonnen" /></th>
           <!-- ko foreach: spielerListe-->
-          <th data-bind="css:{active:isActive}"><input type="text" data-bind="value: spielerName, enable:canChangeSpielerName"  /></th>
+          <th data-bind="css:{active:isActive}"><input type="text" class="input_button" data-bind="value: spielerName, enable:canChangeSpielerName"  /></th>
           <!-- /ko -->
         </tr>
         <tr>
@@ -42,7 +43,7 @@
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
             <!-- ko foreach: new Array(6) -->
-            <button name="einer" data-bind="value:$index() * 1, text:$index() == 0 ? 'X' : $index() * 1, click: $parent.handleInput, disable:$parent.disable($element), visible: $parent.visible($element), css:{streichen:$index()==0}"></button>
+            <button name="einer" class="input_button" data-bind="value:$index() * 1, text:$index() == 0 ? 'X' : $index() * 1, click: $parent.handleInput, disable:$parent.disable($element), visible: $parent.visible($element), css:{streichen:$index()==0}"></button>
             <!-- /ko -->
           </td>
           <!-- /ko -->
@@ -52,7 +53,7 @@
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
             <!-- ko foreach: new Array(6) -->
-            <button name="zweier" data-bind="value:$index() * 2, text:$index() == 0 ? 'X' : $index() * 2, click: $parent.handleInput, disable:$parent.disable($element), visible: $parent.visible($element), css:{streichen:$index()==0}"></button>
+            <button name="zweier" class="input_button" data-bind="value:$index() * 2, text:$index() == 0 ? 'X' : $index() * 2, click: $parent.handleInput, disable:$parent.disable($element), visible: $parent.visible($element), css:{streichen:$index()==0}"></button>
             <!-- /ko -->
           </td>
           <!-- /ko -->
@@ -62,7 +63,7 @@
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
             <!-- ko foreach: new Array(6) -->
-            <button name="dreier" data-bind="value:$index() * 3, text:$index() == 0 ? 'X' : $index() * 3, click: $parent.handleInput, disable:$parent.disable($element), visible: $parent.visible($element), css:{streichen:$index()==0}"></button>
+            <button name="dreier" class="input_button" data-bind="value:$index() * 3, text:$index() == 0 ? 'X' : $index() * 3, click: $parent.handleInput, disable:$parent.disable($element), visible: $parent.visible($element), css:{streichen:$index()==0}"></button>
             <!-- /ko -->
           </td>
           <!-- /ko -->
@@ -72,7 +73,7 @@
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
             <!-- ko foreach: new Array(6) -->
-            <button name="vierer" data-bind="value:$index() * 4, text:$index() == 0 ? 'X' : $index() * 4, click: $parent.handleInput, disable:$parent.disable($element), visible: $parent.visible($element), css:{streichen:$index()==0}"></button>
+            <button name="vierer" class="input_button" data-bind="value:$index() * 4, text:$index() == 0 ? 'X' : $index() * 4, click: $parent.handleInput, disable:$parent.disable($element), visible: $parent.visible($element), css:{streichen:$index()==0}"></button>
             <!-- /ko -->
           </td>
           <!-- /ko -->
@@ -82,7 +83,7 @@
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
             <!-- ko foreach: new Array(6) -->
-            <button name="fuenfer" data-bind="value:$index() * 5, text:$index() == 0 ? 'X' : $index() * 5, click: $parent.handleInput, disable:$parent.disable($element), visible: $parent.visible($element), css:{streichen:$index()==0}"></button>
+            <button name="fuenfer" class="input_button" data-bind="value:$index() * 5, text:$index() == 0 ? 'X' : $index() * 5, click: $parent.handleInput, disable:$parent.disable($element), visible: $parent.visible($element), css:{streichen:$index()==0}"></button>
             <!-- /ko -->
           </td>
           <!-- /ko -->
@@ -92,7 +93,7 @@
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
             <!-- ko foreach: new Array(6) -->
-            <button name="sechser" data-bind="value:$index() * 6, text:$index() == 0 ? 'X' : $index() * 6, click: $parent.handleInput, disable:$parent.disable($element), visible: $parent.visible($element), css:{streichen:$index()==0}"></button>
+            <button name="sechser" class="input_button" data-bind="value:$index() * 6, text:$index() == 0 ? 'X' : $index() * 6, click: $parent.handleInput, disable:$parent.disable($element), visible: $parent.visible($element), css:{streichen:$index()==0}"></button>
             <!-- /ko -->
           </td>
           <!-- /ko -->
@@ -126,8 +127,8 @@
           <td class="headCol" style="font-size:20px;" title="alle Augen zählen">Dreierpasch</td>
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
-            <button name="dreierpasch" class="streichen" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
-            <input type="text" maxlength="2" name="dreierpasch" data-bind="disable:disable($element), visible: visible($element), event:{ change: handleInput}, attr:{placeholder:isActive() ? '?' : ''}"/>
+            <button name="dreierpasch" class="streichen input_button" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
+            <input type="text" maxlength="2" name="dreierpasch" class="input_button" data-bind="disable:disable($element), visible: visible($element), event:{ change: handleInput}, attr:{placeholder:isActive() ? '?' : ''}"/>
           </td>
           <!-- /ko -->
         </tr>
@@ -135,8 +136,8 @@
           <td class="headCol" style="font-size:20px;" title="alle Augen zählen">Viererpasch</td>
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
-            <button name="viererpasch" class="streichen" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
-            <input type="text" maxlength="2" name="viererpasch" data-bind="disable:disable($element), visible: visible($element), event:{ change: handleInput}, attr:{placeholder:isActive() ? '?' : ''}"/>
+            <button name="viererpasch" class="streichen input_button" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
+            <input type="text" maxlength="2" name="viererpasch" class="input_button" data-bind="disable:disable($element), visible: visible($element), event:{ change: handleInput}, attr:{placeholder:isActive() ? '?' : ''}"/>
           </td>
           <!-- /ko -->
         </tr>
@@ -144,8 +145,8 @@
           <td class="headCol" style="font-size:20px;" title="25 Punkte">Full House</td>
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
-            <button name="fullhouse" class="streichen" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
-            <button name="fullhouse" data-bind="value:25, text:'25', click: handleInput, disable:disable($element), visible: visible($element)"></button>
+            <button name="fullhouse" class="streichen input_button" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
+            <button name="fullhouse" class="input_button" data-bind="value:25, text:'25', click: handleInput, disable:disable($element), visible: visible($element)"></button>
           </td>
           <!-- /ko -->
         </tr>
@@ -153,8 +154,8 @@
           <td class="headCol" title="30 Punkte" style="font-size:20px;">&#9778;&#9778;&#9778;</td>
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
-            <button name="kleinestrasse" class="streichen" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
-            <button name="kleinestrasse" data-bind="value:30, text:'30', click: handleInput, disable:disable($element), visible: visible($element)"></button>
+            <button name="kleinestrasse" class="streichen input_button" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
+            <button name="kleinestrasse" class="input_button" data-bind="value:30, text:'30', click: handleInput, disable:disable($element), visible: visible($element)"></button>
           </td>
           <!-- /ko -->
         </tr>
@@ -162,8 +163,8 @@
           <td class="headCol" title="40 Punkte">&#9778;&#9778;&#9778;</td>
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
-            <button name="grossestrasse" class="streichen" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
-            <button name="grossestrasse" data-bind="value:40, text:'40', click: handleInput, disable:disable($element), visible: visible($element)"></button>
+            <button name="grossestrasse" class="streichen input_button" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
+            <button name="grossestrasse" class="input_button" data-bind="value:40, text:'40', click: handleInput, disable:disable($element), visible: visible($element)"></button>
           </td>
           <!-- /ko -->
         </tr>
@@ -171,8 +172,8 @@
           <td class="headCol" style="font-size:20px;" title="50 Punkte">Kniffel</td>
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
-            <button name="kniffel" class="streichen" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
-            <button name="kniffel" data-bind="value:50, text:'50', click: handleInput, disable:disable($element), visible: visible($element)"></button>
+            <button name="kniffel" class="streichen input_button" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
+            <button name="kniffel" class="input_button" data-bind="value:50, text:'50', click: handleInput, disable:disable($element), visible: visible($element)"></button>
           </td>
           <!-- /ko -->
         </tr>
@@ -180,8 +181,8 @@
           <td class="headCol" title="Alle Augen zählen">&#9734;</td>
           <!-- ko foreach: spielerListe-->
           <td data-bind="css:{active:isActive}">
-            <button name="chance" class="streichen" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
-            <input type="text" maxlength="2" name="chance" placeholder="?" data-bind="disable:disable($element), visible: visible($element), event:{ change: handleInput}, attr:{placeholder:isActive() ? '?' : ''}"/>
+            <button name="chance" class="streichen input_button" data-bind="value:0, text:'X', click: handleInput, disable:disable($element), visible: visible($element)"></button>
+            <input type="text" maxlength="2" name="chance" placeholder="?" class="input_button" data-bind="disable:disable($element), visible: visible($element), event:{ change: handleInput}, attr:{placeholder:isActive() ? '?' : ''}"/>
           </td>
           <!-- /ko -->
         </tr>
