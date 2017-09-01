@@ -19,8 +19,7 @@
       <input class="tab" type="button" data-bind="value: $index() + 1, click: $parent.changeActiveSpiel($index()), css:{active:isActive, finished:abgeschlossen}" />
       <!-- /ko -->
       <input class="tab" type="button" value="neues Spiel" style="width:100px;" data-bind="click:function(){addSpiel(window.confirm('Soll die Spielerliste übernommen werden?'))}" />
-      <!-- TogetherJS -->
-      <button id=togetherjs_startButton onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+      
     </div>
     <div id="menuContainer">
       <!-- ko with: aktivesSpiel() -->
