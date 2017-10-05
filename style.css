@@ -200,6 +200,9 @@ input[type=button].wuerfelAusgewaehlt{
 }
 #wuerfelContainer{
   padding:1%;
+  position: fixed;
+  left: 55%;
+  top: 10%;
   /*z-index: 500;*/
 }
 
